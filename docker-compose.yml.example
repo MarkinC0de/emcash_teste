@@ -1,0 +1,41 @@
+version: '3.7'
+
+# Named volumes
+volumes:
+  # MySQL Data
+  emcash-mysql_data:
+    driver: local
+
+networks:
+  backend:
+
+services:
+  # MySQL (5.7)
+  emcash-mysql:
+    image: mysql:5.7
+    container_name: emcash-mysql
+    volumes:
+      - emcash-mysql_data:/var/lib/mysql
+    ports:
+      - "3306:3306"
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=data
+      - MYSQL_USER=user
+      - MYSQL_PASSWORD=pass
+    networks:
+      - backend
+
+  # PHP
+  emcash-nginx:
+    image: webdevops/php-nginx:8.0
+    container_name: emcash-nginx
+    working_dir: /var/www/app
+    volumes:
+      - .:/var/www/app
+    ports:
+      - "80:80"
+    environment:
+      - WEB_DOCUMENT_ROOT=/var/www/app/public
+    networks:
+      - backend

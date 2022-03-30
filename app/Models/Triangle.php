@@ -11,7 +11,7 @@ class Triangle extends Model
     protected $fillable = [
         'name',
         'area',
-        'length',
-        'width'
+        'base',
+        'height'
     ];
 }

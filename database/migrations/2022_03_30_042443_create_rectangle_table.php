@@ -15,7 +15,6 @@ return new class extends Migration
     {
         Schema::create('rectangle', function (Blueprint $table) {
             $table->id();
-            $table->string('name')->default('Rectangle' . +1)->nullable();
             $table->float('area');
             $table->float('length');
             $table->float('width');

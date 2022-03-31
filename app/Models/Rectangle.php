@@ -8,8 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Rectangle extends Model
 {
     use HasFactory;
+
+    protected $table = "rectangle";
     protected $fillable = [
-        'name',
         'area',
         'length',
         'width'

@@ -21,8 +21,6 @@ class Triangle extends JsonResource
             'area' => $this->area,
             'base' => $this->base,
             'height' => $this->height,
-            'created_at' => $this->created_at->format('m/d/Y'),
-            'updated_at' => $this->updated_at->format('m/d/Y'),
         ];
     }
 }

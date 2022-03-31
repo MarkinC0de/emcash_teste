@@ -17,12 +17,9 @@ class Rectangle extends JsonResource
     {
         return [
             'id' => $this->id,
-            'name' => $this->name,
             'area' => $this->area,
             'length' => $this->length,
             'width' => $this->width,
-            'created_at' => $this->created_at->format('m/d/Y'),
-            'updated_at' => $this->updated_at->format('m/d/Y'),
         ];
     }
 }

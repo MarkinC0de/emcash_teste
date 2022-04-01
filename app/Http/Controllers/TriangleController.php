@@ -3,37 +3,32 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\TriangleRequest;
-use App\Http\Resources\Triangle as TriangleResource;
-use App\Models\Triangle;
 use Illuminate\Http\JsonResponse;
+use App\Models\Triangle;
+use App\Http\Resources\Triangle as TriangleResource;
+use App\Http\Controllers\API\BaseController as BaseController;
 
-class TriangleController extends Controller
+class TriangleController extends BaseController
 {
     public function index(): JsonResponse
     {
         $triangle = Triangle::all();
+
         return $this->sendResponse(TriangleResource::collection($triangle), 'Todos os triangulos foram exibidos.');
     }
 
     public function store(TriangleRequest $request): JsonResponse
     {
         $input = $request->validated();
+        $triangle = Triangle::create($input);
 
-        $rectangle = Triangle::create($input);
-        return $this->sendResponse(new TriangleResource($rectangle), 'Triangulo criado com sucesso.');
+        return $this->sendResponse(new TriangleResource($triangle), 'Triangulo criado com sucesso.');
     }
 
-    public function destroy(Triangle $rectangle): JsonResponse
+    public function destroy(Triangle $triangle): JsonResponse
     {
-        $rectangle->delete();
-        return $this->sendResponse([], 'Retangulo deletado.');
-    }
+        $triangle->delete();
 
-    public function calculateArea ($id): JsonResponse
-    {
-        $triangle = Triangle::find($id);
-        $area = $triangle->length * $triangle->width;
-        $triangle->fill(['area' => $area]);
-        return $this->sendResponse(new TriangleResource($triangle), 'Area do triangulo calculada com sucesso.');
+        return $this->sendResponse([], 'Triangulo deletado.');
     }
 }

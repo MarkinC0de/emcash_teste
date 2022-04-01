@@ -8,7 +8,6 @@ init: ## Iniciando o ambiente de desenvolvimento
 
 keys: ## Gerando secret keys
 	docker-compose exec emcash-nginx bash -c "su -c 'php artisan key:generate' application"
-	docker-compose exec emcash-nginx bash -c "su -c 'php artisan jwt:secret --force' application"
 
 dev: ## Iniciar containers
 	docker-compose up -d

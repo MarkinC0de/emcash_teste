@@ -1,4 +1,6 @@
 init: ## Iniciando o ambiente de desenvolvimento
+    cp .env.example .env
+    cp docker-compose.yml.example docker-compose
 	$(MAKE) dev
 	$(MAKE) install
 	$(MAKE) keys

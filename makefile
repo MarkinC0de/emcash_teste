@@ -1,6 +1,5 @@
 init: ## Iniciando o ambiente de desenvolvimento
-    cp .env.example .env
-    cp docker-compose.yml.example docker-compose
+
 	$(MAKE) dev
 	$(MAKE) install
 	$(MAKE) keys
@@ -22,3 +21,9 @@ migrate: ## Executar migrate
 
 install: ## Instalar dependencias do composer
 	docker-compose exec emcash-nginx bash -c "su -c \"composer install\" application"
+
+##@ Composer
+
+copy: ## Instalar dependencias do composer
+	cp .env.example .env
+	cp docker-compose.yml.example docker-compose.yml

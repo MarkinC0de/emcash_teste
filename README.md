@@ -14,7 +14,7 @@ Após clonar o projeto execute os seguinte comando no terminal :
 |POST|`api/triangle` - parâmetros : height e base|
 |GET|`api/calculate-triangle/{id}`|
 |DELETE|`api/triangle/{id}`|
-|
+||
 |GET|`api/rectangle`|
 |POST|`api/rectangle` - parâmetros : length e width|
 |GET|`api/calculate-rectangle/{id}`|
@@ -35,6 +35,7 @@ Se preferir não utilizar o make, basta executar os seguintes comandos em ordem:
 
 ## 
 Make para Windows (choco) -> https://chocolatey.org/install
+
 Make para Linux  -> https://linuxhint.com/install-make-ubuntu/
 
 

@@ -4,7 +4,7 @@ init: ## Iniciando o ambiente de desenvolvimento
 	$(MAKE) dev
 	$(MAKE) install
 	$(MAKE) keys
-	$(MAKE) fresh
+	$(MAKE) migrate
 
 keys: ## Gerando secret keys
 	docker-compose exec emcash-nginx bash -c "su -c 'php artisan key:generate' application"

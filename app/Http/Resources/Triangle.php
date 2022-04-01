@@ -17,7 +17,6 @@ class Triangle extends JsonResource
     {
         return [
             'id' => $this->id,
-            'name' => $this->name,
             'area' => $this->area,
             'base' => $this->base,
             'height' => $this->height,

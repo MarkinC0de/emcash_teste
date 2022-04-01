@@ -1,5 +1,6 @@
 init: ## Iniciando o ambiente de desenvolvimento
 
+	$(MAKE) copy
 	$(MAKE) dev
 	$(MAKE) install
 	$(MAKE) keys

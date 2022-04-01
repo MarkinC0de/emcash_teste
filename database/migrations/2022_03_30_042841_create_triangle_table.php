@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('triangle', function (Blueprint $table) {
             $table->id();
-            $table->float('area');
+            $table->float('area')->default(0);
             $table->float('base');
             $table->float('height');
             $table->timestamps();

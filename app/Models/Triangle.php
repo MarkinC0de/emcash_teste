@@ -9,7 +9,7 @@ class Triangle extends Model
 {
     use HasFactory;
 
-    protected $table = "rectangle";
+    protected $table = "triangle";
     protected $fillable = [
         'area',
         'base',
